@@ -22,8 +22,8 @@ alias \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="sudo emerge" \
-	c="clear" \
-  pq="sudo emerge -s"
+  	pq="sudo emerge -s" \
+	anime="sh .local/share/ani-cli"
 
 
 # adds color to commands.
@@ -41,8 +41,9 @@ alias \
 	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc"
 
-# Gentoo Aliases
+# Gentoo aliases
 alias \
-	upgrade="sudo emerge -uDU --keep-going --with-bdeps=y @world"
-	update="sudo emerge --ask --deep --newuse --update @world"
+	update="sudo emerge --ask --newuse --update --deep @world" \
+	upgrade="sudo -avuDN @world" \
+	rr="cd /usr/src/linux && sudo make menuconfig"
 
