@@ -16,18 +16,13 @@ echo -e "Have a look at \e[0;35mhttps://github.com/SeanIT05/ \e[0m\n"
 echo -e "\e[0;36mInstalling required packages! \e[0m"
 
 echo "Installing xorg, git, libXft, libXinerama"
+echo -e "\e[0;36mCopying necessary files and config \e[0m"
 sleep 0.5
 
 # Requires packages
-sudo emerge dev-vcs/git libXft libXinerama xorg-server 
+sudo emerge dev-vcs/git libXft libXinerama xorg-server && sudo mkdir /home/$USER && sudo cp -a config /home/$USER
 
-# Copying files and config
-echo -e "\e[0;36mCopying necessary files and config \e[0m"
-
-# DWM Building
-# Copying to /home/$USER
-sudo mkdir .config
-sudo cp -a config .config
+# Compiling DWM
 cd .config/dwm && sudo make clean install
 cd .config/slstatus && sudo make clean install
 cd .config/dmenu && sudo make clean install
@@ -35,4 +30,4 @@ cd .config/dmenu && sudo make clean install
 echo -e "Have a look at \e[0;36mBuilt DWM and configuration copied! \e[0m"
 echo -e "Have a look at \e[0;36mEmerging alacritty \e[0m"
 sleep 0.3
-sudo emerge -av alacritty
+sudo emerge alacritty
