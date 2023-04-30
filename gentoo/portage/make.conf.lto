@@ -37,7 +37,3 @@ LC_MESSAGES=C
 ACCEPT_KEYWORDS="~amd64"
 GRUB_PLATFORMS="efi-64"
 FEATURES="parallel-install candy collision-protect compressdebug compress-index parallel-fetch"
-GENTOO_MIRRORS="http://tux.rainside.sk/gentoo/ \
-ftp://tux.rainside.sk/gentoo/ \
-https://mirror.wheel.sk/gentoo \
-http://mirror.wheel.sk/gentoo"
