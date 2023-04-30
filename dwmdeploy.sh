@@ -47,7 +47,8 @@ echo -e "\e[0;36mBuilt DWM and configuration copied! \e[0m"
 sleep 2
 
 # Copying xinitrc
-sudo cp config/xinitrc /home/$USER/.xinitrc
+cd /home/$USER/gentoo-setup
+sudo cp .xinitrc /home/$USER/.xinitrc
 sudo cp bg /usr/share/bg
 
 # Updating System
