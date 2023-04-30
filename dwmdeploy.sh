@@ -13,16 +13,16 @@ sleep 3
 # Shameless plug
 echo -e "Have a look at \e[0;35mhttps://github.com/SeanIT05/ \e[0m\n"
 
-echo -e "Have a look at \e[0;36mInstalling required packages! \e[0m"
+echo -e "\e[0;36mInstalling required packages! \e[0m"
 
-echo "Installing git, libXft, libXinerama"
+echo "Installing xorg, git, libXft, libXinerama"
 sleep 0.5
 
 # Requires packages
-sudo emerge -av git libXft libXinerama 
+sudo emerge dev-vcs/git libXft libXinerama xorg-server 
 
 # Copying files and config
-echo -e "Have a look at \e[0;36mCopying necessary files and config \e[0m"
+echo -e "\e[0;36mCopying necessary files and config \e[0m"
 
 # DWM Building
 # Copying to /home/$USER
