@@ -51,11 +51,24 @@ cd /home/$USER/gentoo-setup
 sudo cp .xinitrc /home/$USER/.xinitrc
 sudo cp bg /usr/share/bg
 
-# Updating System
-echo "Do you wish to update your system? [Y,n]"
+# Prompt system update
+echo "Update system (necessary)? [Y,n]"
 read input
 if [[ $input == "Y" || $input == "y" ]]; then
         sudo emerge --newuse --update --deep @world
+else
+        echo "Skipping..."
+fi
+
+cd /home/$USER
+
+# Add custom .zshrc
+echo "Use my custom .zshrc? [Y,n]"
+read input
+if [[ $input == "Y" || $input == "y" ]]; then
+        sudo cp gentoo-setup/.zshrc .zshrc
+	sudo emerge zsh
+	chsh $USER
 else
         echo "Skipping..."
 fi
