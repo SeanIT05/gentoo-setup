@@ -12,6 +12,13 @@ sleep 3
 
 # Shameless plug
 echo -e "Have a look at \e[0;35mhttps://github.com/SeanIT05/ \e[0m\n"
+
+# Mirrorselect
+echo "Installing necessary dependencies"
+sudo emerge mirrorselect gentoolkit
+echo -e "\e[0;36mSelect your mirrors \e[0m"
+mirrorselect -i -r -o >> gentoo/portage/make.conf
+
 echo -e "\e[0;35mUsing default make.conf \e[0m"
 echo -e "\e[0;31mPlease adjust gentoo/portage/make.conf to your liking! \e[0m\n"
 echo "LTO, PGO, Graphite is also an option (advanced)"
@@ -20,13 +27,12 @@ echo "If interested use gentoo/portage/make.conf.lto instead \n"
 # Copying default make.conf
 echo -e "\e[0;36mCopying /etc/portage/make.conf! \e[0m"
 sleep 10
-
 sudo cp gentoo/portage/make.conf /etc/portage/make.conf
 
 echo -e "\e[0;36mCompiling software... \e[0m"
 
-# Requires packages
-sudo emerge dev-vcs/git libXft libXinerama xorg-server rust-bin alacritty picom feh && sudo mkdir /home/$USER .config && sudo cp -a config /home/$USER
+# Required packages
+sudo emerge dev-vcs/git libXft libXinerama xorg-server rust-bin alacritty picom feh && sudo mkdir /home/$USER/.config && sudo mv config/* /home/$USER/.config
 
 # Compiling DWM
 echo -e "\e[0;36mFinished compiling! \e[0m\n"
