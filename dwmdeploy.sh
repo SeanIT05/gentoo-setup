@@ -27,7 +27,7 @@ echo -e "Have a look at \e[0;36mCopying necessary files and config \e[0m"
 # DWM Building
 # Copying to /home/$USER
 sudo mkdir .config
-sudo cp -a .config .config
+sudo cp -a config .config
 cd .config/dwm && sudo make clean install
 cd .config/slstatus && sudo make clean install
 cd .config/dmenu && sudo make clean install
