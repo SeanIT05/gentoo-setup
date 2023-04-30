@@ -17,7 +17,7 @@ echo -e "Have a look at \e[0;35mhttps://github.com/SeanIT05/ \e[0m\n"
 echo "Installing necessary dependencies"
 sudo emerge mirrorselect gentoolkit
 echo -e "\e[0;36mSelect your mirrors \e[0m"
-mirrorselect -i -r -o >> gentoo/portage/make.conf
+mirrorselect -i -o >> gentoo-setup/gentoo/portage/make.conf
 
 echo -e "\e[0;35mUsing default make.conf \e[0m"
 echo -e "\e[0;31mPlease adjust gentoo/portage/make.conf to your liking! \e[0m\n"
@@ -38,16 +38,16 @@ sudo emerge dev-vcs/git libXft libXinerama xorg-server rust-bin alacritty picom 
 echo -e "\e[0;36mFinished compiling! \e[0m\n"
 sleep 3
 echo -e "\e[0;36mCompiling DWM\e[0m"
-cd .config/dwm && sudo make clean install
-cd .config/slstatus && sudo make clean install
-cd .config/dmenu && sudo make clean install
+cd /home/$USER/.config/dwm && sudo make clean install
+cd /home/$USER/.config/slstatus && sudo make clean install
+cd /home/$USER/.config/dmenu && sudo make clean install
 
 # After DWM Compile
 echo -e "\e[0;36mBuilt DWM and configuration copied! \e[0m"
 sleep 2
 
 # Copying xinitrc
-sudo cp config/xinitrc /home/$USER .xinitrc
+sudo cp config/xinitrc /home/$USER/.xinitrc
 sudo cp bg /usr/share/bg
 
 # Updating System
