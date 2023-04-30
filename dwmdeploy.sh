@@ -12,12 +12,13 @@ sleep 3
 
 # Shameless plug
 echo -e "Have a look at \e[0;35mhttps://github.com/SeanIT05/ \e[0m\n"
+sleep 2
 
-echo -e "\e[0;36mInstalling required packages! \e[0m"
+echo -e "\e[0;36mCopying /etc/portage/make.conf! \e[0m"
+sleep 1
+sudo cp gentoo/portage/make.conf /etc/portage/make.conf
 
-echo "Installing xorg, git, libXft, libXinerama"
-echo -e "\e[0;36mCopying necessary files and config \e[0m"
-sleep 0.5
+echo -e "\e[0;36mPreparing your system! \e[0m"
 
 # Requires packages
 sudo emerge dev-vcs/git libXft libXinerama xorg-server && sudo mkdir /home/$USER && sudo cp -a config /home/$USER
