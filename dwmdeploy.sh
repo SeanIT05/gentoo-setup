@@ -1,4 +1,4 @@
-#!usr/bin/env bash
+#!/bin/sh
 
 # Prerequisites
 echo -e "\e[0;31mSet up sudo and a user, else this script wont work \e[0m\n"
