@@ -1,15 +1,11 @@
-CC="gcc"
-CXX="g++"
-CPP="cpp"
-
-AR="${CHOST}-ar"
-NM="${CHOST}-nm"
-RANLIB="${CHOST}-ranlib"
-
-NTHREADS="auto"
-FLTO="-flto=${NTHREADS}"
-GRAPHITE="-fgraphite-identity -floop-nest-optimize"
-COMMON_FLAGS="-march=native -O2 -pipe -flto"
+COMMON_FLAGS="-O2 -march=native -pipe"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 LDFLAGS="-Wl,--as-needed"
+
+CC="gcc"
+CXX="g++"
+CPP="gcc -E"
+AR="ar"
+NM="nm"
+RANLIB="ranlib"
