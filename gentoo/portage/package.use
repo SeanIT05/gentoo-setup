@@ -1,0 +1,24 @@
+dev-lang/rust system-llvm
+=app-arch/xz-utils-5.4.2 -nls
+app-i18n/mozc fcitx5
+dev-qt/qtbase opengl egl eglfs gles2-only
+dev-qt/qtdeclarative opengl
+sys-apps/xdg-desktop-portal screencast
+gui-apps/waybar udev evdev network sndio upower tray hyprland pipewire pulseaudio
+sys-apps/openrc sysv-utils
+app-admin/sudo offensive
+sys-kernel/installkernel dracut grub
+media-libs/libsdl2 gles2
+x11-drivers/nvidia-drivers -tools
+media-video/pipewire sound-server
+www-client/librewolf geckodriver hwaccel
+>=dev-libs/libdbusmenu-16.04.0-r2 gtk3
+>=dev-qt/qtgui-5.15.13 egl
+>=gui-libs/wlroots-0.17.3 x11-backend
+>=dev-libs/icu-74.2 abi_x86_32
+>=sys-libs/gpm-1.20.7-r6 abi_x86_32
+>=x11-base/xorg-server-21.1.13-r1 xvfb
+>=app-crypt/gcr-3.41.1-r2:0 gtk
+>=net-libs/nodejs-22.1.0 inspector
+>=app-i18n/fcitx-qt-5.1.5-r2 qt5
+=dev-lang/python-3.13.0_beta1_p3 -pgo
