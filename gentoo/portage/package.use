@@ -1,14 +1,42 @@
+##################################################################### Manually set USE flags ##########################################################################################
+sys-kernel/cachyos-sources preempt_full bmq -bore
+dev-lang/rust system-llvm llvm-libunwind
 media-video/pipewire pipewire-alsa sound-server
 media-sound/pulseaudio -daemon
 dev-vcs/git -perl
 sys-kernel/installkernel grub dracut
+app-emulation/qemu gtk
 sys-apps/openrc sysv-utils
->=sys-libs/gpm-1.20.7-r6 abi_x86_32
->=dev-libs/icu-74.2 abi_x86_32
->=x11-base/xorg-server-21.1.13-r1 xvfb
-www-client/librewolf geckodriver hwaccel llvm_slot_18 -llvm_slot_17
->=dev-lang/python-3.13.0_beta3_p1 -pgo
->=app-crypt/gcr-3.41.1-r2:0 gtk
->=dev-libs/libdbusmenu-16.04.0-r2 gtk3
->=dev-libs/quazip-1.4-r1 qt5
+sys-kernel/linux-firmware compress-zstd
+www-client/librewolf -llvm_slot_17 -llvm_slot_18 llvm_slot_19 -pgo eme-free openh264 wasm gmp-autoupdate hwaccel 
+=dev-libs/json-glib-1.8.0 -introspection
+x11-drivers/nvidia-drivers modules-compress
+www-client/ungoogled-chromium-bin widevine
+###################################################################### Portage set USE flags ##########################################################################################
+>=net-libs/nodejs-22.10.0 inspector
+>=net-libs/nodejs-22.10.0 inspector
 >=sys-libs/zlib-1.3.1-r1 minizip
+# required by www-client/librewolf-132.0.2_p1::librewolf[system-libvpx]
+# required by librewolf (argument)
+>=media-libs/libvpx-1.14.1 postproc
+# required by www-client/librewolf-132.0.2_p1::librewolf[X,pgo]
+# required by librewolf (argument)
+>=x11-base/xorg-server-21.1.14 xvfb
+# required by dev-libs/libxml2-2.13.5::gentoo[icu]
+# required by sys-devel/clang-19.1.5::gentoo[xml]
+# required by sys-devel/clang-toolchain-symlinks-19::gentoo
+>=dev-libs/icu-76.1-r1 abi_x86_32
+# required by sys-libs/ncurses-6.5_p20241109::gentoo[gpm]
+# required by www-client/w3m-0.5.3_p20230121::gentoo
+# required by virtual/w3m-1::gentoo
+# required by app-text/xmlto-0.0.28-r11::gentoo
+# required by x11-misc/xdg-utils-1.2.1-r6::gentoo
+# required by net-print/cups-2.4.11::gentoo[X]
+# required by dev-java/openjdk-21.0.5_p11::gentoo
+# required by @selected
+# required by @world (argument)
+>=sys-libs/gpm-1.20.7-r6 abi_x86_32
+# required by dev-libs/libayatana-appindicator-0.5.93::gentoo
+# required by gui-apps/waybar-0.11.0-r1::gentoo[tray]
+# required by waybar (argument)
+>=dev-libs/libdbusmenu-16.04.0-r2 gtk3
